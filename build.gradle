@@ -1,14 +1,14 @@
 buildscript {
-    ext {
-        springBootVersion = '2.1.7.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
+	ext {
+		springBootVersion = '2.1.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
 }
 
 apply plugin: 'java'
@@ -16,16 +16,26 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'com.github.gntodtndls156'
-version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
+
+group = 'com.github.gntodtndls156'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '15'
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
+
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.projectlombok:lombok')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'junit:junit:4.12'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile('org.projectlombok:lombok')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('com.h2database:h2')
+}
+
+test {
+	useJUnitPlatform()
 }
