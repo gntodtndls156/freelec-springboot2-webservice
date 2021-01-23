@@ -4,8 +4,6 @@ import com.github.gntodtndls156.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +15,6 @@ import javax.persistence.GenerationType;
 @Entity
 public class Posts extends BaseTimeEntity {
     @javax.persistence.Id
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

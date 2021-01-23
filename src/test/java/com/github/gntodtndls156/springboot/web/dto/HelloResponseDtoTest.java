@@ -18,5 +18,4 @@ public class HelloResponseDtoTest {
         assertThat(dto.getName()).isEqualTo(name);
         assertThat(dto.getName()).isEqualTo(amount);
     }
-
 }

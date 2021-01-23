@@ -1,6 +1,5 @@
 package com.github.gntodtndls156.springboot.web;
 
-import com.github.gntodtndls156.springboot.domain.posts.PostsRepository;
 import com.github.gntodtndls156.springboot.service.posts.PostsService;
 import com.github.gntodtndls156.springboot.web.dto.PostsResponseDto;
 import com.github.gntodtndls156.springboot.web.dto.PostsSaveRequiestDto;
@@ -26,5 +25,11 @@ public class PostsApiController {
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
+    }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
     }
 }
